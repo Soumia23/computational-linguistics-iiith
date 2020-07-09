@@ -1,0 +1,10 @@
+Functionalities 
+Dropdown list:
+	-English
+	-Hindi
+On selecton of language words as button of a sentence in jumbled order should appear.
+On selection of buttons, a Re-form the sentence should appear.
+After selection of all the buttons a Check the correctness of this sentence button should appear.
+Clicking on the above mentioned button should verify the formed sentence and display the result as either Right answer!!! or Wrong answer!!!.
+If the answer is wrong, a Get correct sentence button should appear below.
+The above functionality is same for English r Hindi .
