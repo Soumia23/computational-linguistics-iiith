@@ -117,3 +117,13 @@ var hindi = {
 		"है वहाँ बड़ी सी एक किताब "
 	],
 };
+function select() {
+	let lang = document.getElementById("dropdown").value;
+	if (lang === "hindi") {
+		document.getElementById("display").innerHTML = "<b>Form a sentence(Declarative or Interrogative or any other type) from the given words</b>" + "<br>" + "<i>(select the buttons in proper order)</i>";
+	} else if (lang === "english") {
+		document.getElementById("display").innerHTML = "<b>Form a sentence(Declarative or Interrogative or any other type) from the given words</b>" + "<br>" + "<i>(select the buttons in proper order)</i>";
+	} else {
+		alert("Select language");
+	}
+}
