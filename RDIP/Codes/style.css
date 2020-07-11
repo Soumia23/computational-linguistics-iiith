@@ -6,3 +6,10 @@ i{
 color: #1a1aff;
 font-family: sans-serif;
 }
+#words{
+margin: 10px;
+padding: 5px;
+text-align: center;
+position: relative;
+left: 30%;
+}

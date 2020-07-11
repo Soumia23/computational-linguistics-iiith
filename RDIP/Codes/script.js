@@ -1,42 +1,42 @@
-var english = {
-	"sentence1": [
+var english = [
+	 [
 		"John ate an apple before afternoon",
 		"John ate an apple before afternoon",
 		"before afternoon John ate an apple",
 		"John before afternoon ate an apple"
 	],
-	"sentence2": [
+	[
 		"some students like to study in the night",
 		"at night some students like to study"
-	],
-	"sentence3": [
+	],[
+	
 		"John and Mary went to church",
 		"Mary and John went to church"
 	],
-	"sentence4": [
+	 [
 		"John went to church after eating",
 		"after eating John went to church",
 		"John after eating went to church"
 	],
-	"sentence5": [
+	 [
 		"did he go to market",
 		"he did go to market"
 	],
-	"sentence6": [
+	 [
 		"the woman who called my sister sells cosmetics",
 		"the woman who sells cosmetics called my sister",
 		"my sister who sells cosmetics called the woman",
 		"my sister who called the woman sells cosmetics"
 	],
-	"sentence7": [
+	 [
 		"John goes to the library and studies",
 		"John studies and goes to the library"
 	],
-	"sentence8": [
+	[
 		"John ate an apple so did she",
 		"she ate an apple so did John"
 	],
-	"sentence9": [
+	 [
 		"the teacher returned the book after she noticed the error",
 		"the teacher noticed the error after she returned the book",
 		"after the teacher returned the book she noticed the error",
@@ -46,7 +46,7 @@ var english = {
 		"after she returned the book the teacher noticed the error",
 		"after she noticed the error the teacher returned the book"
 	],
-	"sentence10": [
+	[
 		"I told her that I bought a book yesterday",
 		"I told her yesterday that I bought a book",
 		"yesterday I told her that I bought a book",
@@ -54,21 +54,19 @@ var english = {
 		"I bought a book yesterday that I told her",
 		"yesterday I bought a book that I told her"
 	]
-};
-var hindi = {
-	"answer1": [
+];
+var hindi = [
+ [
 		"राम और श्याम बाजार गयें ",
 		"राम और श्याम गयें बाजार ",
 		"बाजार गयें राम और श्याम ",
 		"गयें बाजार राम और श्याम "
-	],
-	"answer2": [
+	],[
 		"राम सोया और श्याम भी ",
 		"श्याम सोया और राम भी ",
 		"सोया श्याम और राम भी ",
 		"सोया राम और श्याम भी "
-	],
-	"answer3": [
+	],[
 		"मैंने उसे बताया कि राम सो रहा है ",
 		"मैंने उसे बताया कि सो रहा है राम ",
 		"उसे मैंने बताया कि राम सो रहा है ",
@@ -81,16 +79,14 @@ var hindi = {
 		"बताया मैंने उसे कि सो रहा है राम ",
 		"बताया उसे मैंने कि राम सो रहा है ",
 		"बताया उसे मैंने कि सो रहा है राम "
-	],
-	"answer4": [
+	],[
 		"राम खाकर सोया ",
 		"खाकर राम सोया ",
 		"राम सोया खाकर ",
 		"खाकर सोया राम ",
 		"सोया राम खाकर ",
 		"सोया खाकर राम "
-	],
-	"answer5": [
+	],[
 		"बिल्लियों को मारकर कुत्ता सो गया ",
 		"मारकर बिल्लियों को कुत्ता सो गया ",
 		"बिल्लियों को मारकर सो गया कुत्ता ",
@@ -99,14 +95,12 @@ var hindi = {
 		"कुत्ता सो गया मारकर बिल्लियों को ",
 		"सो गया कुत्ता बिल्लियों को मारकर ",
 		"सो गया कुत्ता मारकर बिल्लियों को "
-	],
-	"answer6": [
+	],[
 		"एक लाल किताब वहाँ है ",
 		"एक लाल किताब है वहाँ ",
 		"वहाँ है एक लाल किताब ",
 		"है वहाँ एक लाल किताब "
-	],
-	"answer7": [
+	],[
 		"एक बड़ी सी किताब वहाँ है ",
 		"एक बड़ी सी किताब है वहाँ ",
 		"बड़ी सी एक किताब वहाँ है ",
@@ -116,14 +110,35 @@ var hindi = {
 		"है वहाँ एक बड़ी सी किताब ",
 		"है वहाँ बड़ी सी एक किताब "
 	],
-};
+];
+
 function select() {
 	let lang = document.getElementById("dropdown").value;
-	if (lang === "hindi") {
+	if (lang === "english") {
 		document.getElementById("display").innerHTML = "<b>Form a sentence(Declarative or Interrogative or any other type) from the given words</b>" + "<br>" + "<i>(select the buttons in proper order)</i>";
-	} else if (lang === "english") {
+		var random = Math.floor(Math.random() * 10);
+		var eng = jumble(random);
+	} else if (lang === "hindi") {
 		document.getElementById("display").innerHTML = "<b>Form a sentence(Declarative or Interrogative or any other type) from the given words</b>" + "<br>" + "<i>(select the buttons in proper order)</i>";
 	} else {
 		alert("Select language");
 	}
+function jumble(sent) {
+                   let line = english[sent][0];
+	var text = line.split(" "), length = text.length , temp , i , index = length - 1;
+	do {
+		i = Math.floor(Math.random() * length);
+		temp = text[i];
+		text[i] = text[index];
+		text[index] = temp;
+		index--;
+	} while (index !== 0);
+	for (var j = 0; j < length; j++) {
+   		var button = document.createElement('Button');
+		button.id = 'words';
+		button.innerHTML="words";
+		document.body.appendChild(button);
+		button.innerHTML = text[j];
+	}
+}
 }
