@@ -117,6 +117,8 @@ var formed_sentence = "";
 var count = 0;
 var random = 0;
 var length = 0;
+var text = "";
+var jumbled_sentence = "";
 function select() {
 	let lang = document.getElementById("dropdown").value;
 	if (lang === "english"||lang === "hindi") {
@@ -140,7 +142,8 @@ function select_sentence(lang){
 		}	
 }
 function jumble(line) {
-	var text = line.toLowerCase().split(" "), length = text.length , temp , i , index = length - 1;
+	text = line.toLowerCase().split(" "), length = text.length ;
+	var temp , i , index = length - 1;
 	do {
 		i = Math.floor(Math.random() * length);
 		temp = text[i];
@@ -148,13 +151,18 @@ function jumble(line) {
 		text[index] = temp;
 		index--;
 	} while (index !== 0);
-	for(var j = 0; j < text.length ; j++){
+	jumbled_sentence = text;
+	buttons(text);
+}
+function buttons(text){
+	for(var j = 0; j < length ; j++){
 		var button = document.createElement("Button");
 		button.setAttribute("id", j.toString());
 		button.setAttribute("class", "words");
 		button.setAttribute("value", text[j]);
 		button.innerHTML = text[j];
 		document.getElementById("icons").append(button);
+		count = 0;
 	}
 }
 function display2(id){
@@ -180,15 +188,30 @@ function press(id){
 		document.getElementById("check").style.display = "initial";
 	}
 }
+function reform(){
+clr();
+document.getElementById("icons").innerHTML= "";
+buttons(jumbled_sentence);
+}
 function display(style) {
 	document.getElementById("display").style.display = style;
 	document.getElementById("icons").style.display = style;
 	document.getElementById("display2").style.display = style;
-	document.getElementById("formed").style.display = style;
+	document.getElementById("formed_sentence").style.display = style;
 	document.getElementById("reform_button").style.display = style;
 	document.getElementById("check").style.display = style;
 	document.getElementById("correct").style.display = style;
 	document.getElementById("right").style.display = style;
 	document.getElementById("wrong").style.display = style;
 	document.getElementById("actual_sentence").style.display = style;
+}
+function clr(){
+	document.getElementById("formed").innerHTML = "";
+	document.getElementById("display2").innerHTML = "";
+	document.getElementById("reform_button").style.display = "none";
+	document.getElementById("check").style.display = "none";
+	document.getElementById("correct").style.display = "none";
+	document.getElementById("right").style.display ="none";
+	document.getElementById("wrong").style.display = "none";
+	document.getElementById("actual_sentence").style.display = "none";
 }
