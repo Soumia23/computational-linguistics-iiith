@@ -1,5 +1,5 @@
 var english = [
-	 [
+	[
 		"John ate an apple before afternoon",
 		"John ate an apple before afternoon",
 		"before afternoon John ate an apple",
@@ -8,27 +8,28 @@ var english = [
 	[
 		"some students like to study in the night",
 		"at night some students like to study"
-	],[
-	
+	],
+	[
+
 		"John and Mary went to church",
 		"Mary and John went to church"
 	],
-	 [
+	[
 		"John went to church after eating",
 		"after eating John went to church",
 		"John after eating went to church"
 	],
-	 [
+	[
 		"did he go to market",
 		"he did go to market"
 	],
-	 [
+	[
 		"the woman who called my sister sells cosmetics",
 		"the woman who sells cosmetics called my sister",
 		"my sister who sells cosmetics called the woman",
 		"my sister who called the woman sells cosmetics"
 	],
-	 [
+	[
 		"John goes to the library and studies",
 		"John studies and goes to the library"
 	],
@@ -36,7 +37,7 @@ var english = [
 		"John ate an apple so did she",
 		"she ate an apple so did John"
 	],
-	 [
+	[
 		"the teacher returned the book after she noticed the error",
 		"the teacher noticed the error after she returned the book",
 		"after the teacher returned the book she noticed the error",
@@ -56,17 +57,19 @@ var english = [
 	]
 ];
 var hindi = [
- [
+	[
 		"राम और श्याम बाजार गयें",
 		"राम और श्याम गयें बाजार",
 		"बाजार गयें राम और श्याम",
 		"गयें बाजार राम और श्याम"
-	],[
+	],
+	[
 		"राम सोया और श्याम भी",
 		"श्याम सोया और राम भी",
 		"सोया श्याम और राम भी",
 		"सोया राम और श्याम भी"
-	],[
+	],
+	[
 		"मैंने उसे बताया कि राम सो रहा है",
 		"मैंने उसे बताया कि सो रहा है राम",
 		"उसे मैंने बताया कि राम सो रहा है",
@@ -79,14 +82,16 @@ var hindi = [
 		"बताया मैंने उसे कि सो रहा है राम",
 		"बताया उसे मैंने कि राम सो रहा है",
 		"बताया उसे मैंने कि सो रहा है राम"
-	],[
+	],
+	[
 		"राम खाकर सोया",
 		"खाकर राम सोया",
 		"राम सोया खाकर",
 		"खाकर सोया राम",
 		"सोया राम खाकर",
 		"सोया खाकर राम"
-	],[
+	],
+	[
 		"बिल्लियों को मारकर कुत्ता सो गया",
 		"मारकर बिल्लियों को कुत्ता सो गया",
 		"बिल्लियों को मारकर सो गया कुत्ता",
@@ -95,12 +100,14 @@ var hindi = [
 		"कुत्ता सो गया मारकर बिल्लियों को",
 		"सो गया कुत्ता बिल्लियों को मारकर",
 		"सो गया कुत्ता मारकर बिल्लियों को"
-	],[
+	],
+	[
 		"एक लाल किताब वहाँ है",
 		"एक लाल किताब है वहाँ",
 		"वहाँ है एक लाल किताब",
 		"है वहाँ एक लाल किताब"
-	],[
+	],
+	[
 		"एक बड़ी सी किताब वहाँ है",
 		"एक बड़ी सी किताब है वहाँ",
 		"बड़ी सी एक किताब वहाँ है",
@@ -119,9 +126,10 @@ var random = 0;
 var length = 0;
 var text = "";
 var jumbled_sentence = "";
+
 function select() {
 	let lang = document.getElementById("dropdown").value;
-	if (lang === "english"||lang === "hindi") {
+	if (lang === "english" || lang === "hindi") {
 		document.getElementById("display").innerHTML = "<b>Form a sentence(Declarative or Interrogative or any other type) from the given words</b>" + "<br>" + "<i>(select the buttons in proper order)</i>";
 		select_sentence(lang);
 	} else {
@@ -129,21 +137,23 @@ function select() {
 		return false;
 	}
 }
-function select_sentence(lang){
-		document.getElementById("icons").innerHTML="";
-		if (lang === "english") {
+
+function select_sentence(lang) {
+	document.getElementById("icons").innerHTML = "";
+	if (lang === "english") {
 		random = Math.floor(Math.random() * 10);
 		var eng = english[random][0];
 		jumble(eng);
-		} else if (lang === "hindi") {
-		random = Math.floor(Math.random() *7);
-		var hin =  hindi[random][0];
+	} else if (lang === "hindi") {
+		random = Math.floor(Math.random() * 7);
+		var hin = hindi[random][0];
 		jumble(hin);
-		}	
+	}
 }
+
 function jumble(line) {
-	text = line.toLowerCase().split(" "), length = text.length ;
-	var temp , i , index = length - 1;
+	text = line.toLowerCase().split(" "), length = text.length;
+	var temp, i, index = length - 1;
 	do {
 		i = Math.floor(Math.random() * length);
 		temp = text[i];
@@ -154,8 +164,9 @@ function jumble(line) {
 	jumbled_sentence = text;
 	buttons(text);
 }
-function buttons(text){
-	for(var j = 0; j < length ; j++){
+
+function buttons(text) {
+	for (var j = 0; j < length; j++) {
 		var button = document.createElement("Button");
 		button.setAttribute("id", j.toString());
 		button.setAttribute("class", "words");
@@ -165,14 +176,16 @@ function buttons(text){
 		count = 0;
 	}
 }
-function display2(id){
-	if(id === "icons"){
+
+function display2(id) {
+	if (id === "icons") {
 		return;
-	}	
-		document.getElementById("display2").innerHTML = "<b>Formed Sentence </b>"+"<i>(after selecting words):</i>";
+	}
+	document.getElementById("display2").innerHTML = "<b>Formed Sentence </b>" + "<i>(after selecting words):</i>";
 }
-function press(id){
-	if(id === "icons"){
+
+function press(id) {
+	if (id === "icons") {
 		return;
 	}
 	if (count === 0) {
@@ -188,11 +201,13 @@ function press(id){
 		document.getElementById("check").style.display = "initial";
 	}
 }
-function reform(){
-clr();
-document.getElementById("icons").innerHTML= "";
-buttons(jumbled_sentence);
+
+function reform() {
+	clr();
+	document.getElementById("icons").innerHTML = "";
+	buttons(jumbled_sentence);
 }
+
 function display(style) {
 	document.getElementById("display").style.display = style;
 	document.getElementById("icons").style.display = style;
@@ -205,13 +220,14 @@ function display(style) {
 	document.getElementById("wrong").style.display = style;
 	document.getElementById("actual_sentence").style.display = style;
 }
-function clr(){
+
+function clr() {
 	document.getElementById("formed").innerHTML = "";
 	document.getElementById("display2").innerHTML = "";
 	document.getElementById("reform_button").style.display = "none";
 	document.getElementById("check").style.display = "none";
 	document.getElementById("correct").style.display = "none";
-	document.getElementById("right").style.display ="none";
+	document.getElementById("right").style.display = "none";
 	document.getElementById("wrong").style.display = "none";
 	document.getElementById("actual_sentence").style.display = "none";
 }
