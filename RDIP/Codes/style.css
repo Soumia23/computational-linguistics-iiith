@@ -16,3 +16,13 @@ position: relative;
 font-size: 30px;
 color: #404040;
 }
+#right{
+color: green;
+font-size : 30px;
+font-family: sans-serif;
+}
+#wrong{
+color : red;
+font-size : 30px;
+font-family: sans-serif;
+}

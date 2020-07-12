@@ -126,9 +126,10 @@ var random = 0;
 var length = 0;
 var text = "";
 var jumbled_sentence = "";
-
+var lang = "";
 function select() {
-	let lang = document.getElementById("dropdown").value;
+	clr();
+	lang = document.getElementById("dropdown").value;
 	if (lang === "english" || lang === "hindi") {
 		document.getElementById("display").innerHTML = "<b>Form a sentence(Declarative or Interrogative or any other type) from the given words</b>" + "<br>" + "<i>(select the buttons in proper order)</i>";
 		select_sentence(lang);
@@ -152,7 +153,7 @@ function select_sentence(lang) {
 }
 
 function jumble(line) {
-	text = line.toLowerCase().split(" "), length = text.length;
+	text = line.split(" "), length = text.length;
 	var temp, i, index = length - 1;
 	do {
 		i = Math.floor(Math.random() * length);
@@ -208,6 +209,32 @@ function reform() {
 	buttons(jumbled_sentence);
 }
 
+function check(){
+	var check = false;
+	if (lang === "english"){
+		for(a in english[random]){
+			if(english[random][a] === formed_sentence){
+				check = true ;
+				break;
+		     	 }
+		}
+	}
+	else if(lang === "hindi"){
+		for(a in hindi[random]){
+		       	if(hindi[random][a] === formed_sentence){
+				check = true;
+				break;
+			}
+		}
+	}
+	if(check === true){
+		document.getElementById("right").style.display = "initial";
+	}
+	else{
+		document.getElementById("wrong").style.display = "initial";
+		document.getElementById("correct").style.display = "initial";
+	}
+}
 function display(style) {
 	document.getElementById("display").style.display = style;
 	document.getElementById("icons").style.display = style;
