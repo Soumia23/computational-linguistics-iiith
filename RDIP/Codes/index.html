@@ -1,22 +1,47 @@
 <!DOCTYPE html>
-<html lang=en>
+<html lang="en">
+
 <head>
-<title>Virtual labs</title></head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js">
-</script>
+	<title>Virtual labs</title>
+
 <script src="script.js"></script>
 <link href="style.css" type="text/css" rel="stylesheet">
- <meta charset="UTF-8">
-</head>
+<meta charset="UTF-8"> </head>
+
 <body>
-<h1>Experiment </h1>
-<div align="center">
-<select id="dropdown" onchange="select()">
-<option value="default">---Select Language---</option>
-<option value="english">English</option>
-<option value="hindi">Hindi</option>
-</select>
-<p id="display"></p>
-</div>
+	<h3>Experiment </h3>
+	<br>
+	<br>
+	<br>
+	<div class="experiment division" align="center">
+		<select id="dropdown"  onchange="select()">
+			<option value="default">---Select Language---</option>
+			<option value="english">English</option>
+			<option value="hindi">Hindi</option>
+		</select>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+	<p id="display"></p>
+	<br>
+	<br>
+	<br>
+	<p id="icons" onclick="press(event.target.id);display2(event.target.id)"></p>
+		<br>
+		<br>
+		<p id="display2"></p>
+		<b><p id="formed"></p></b>
+		<button id="reform_button" style="display:none;" onclick="reform()">Re-form the sentence</button>
+		<br>
+		<br>
+		<button id="check" onclick="check()" style="display:none;">Check the correctness of this sentence</button>
+		<p id="right" style="display:none;">Right answer!!!</p>
+		<p id="wrong" style="display:none;">Wrong answer!!!</p>
+		<button id="correct" onclick="correct()" style="display:none;">Get Correct Sentence</button>
+		<p id="actual_sentence"></p>
+	</div>
 </body>
+
 </html>

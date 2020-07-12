@@ -112,23 +112,35 @@ var hindi = [
 	],
 ];
 
+var actual_sentence = "";
+var formed_sentence = "";
+var count = 0;
+var random = 0;
+var length = 0;
 function select() {
 	let lang = document.getElementById("dropdown").value;
-	if (lang === "english") {
+	if (lang === "english"||lang === "hindi") {
 		document.getElementById("display").innerHTML = "<b>Form a sentence(Declarative or Interrogative or any other type) from the given words</b>" + "<br>" + "<i>(select the buttons in proper order)</i>";
-		var random = Math.floor(Math.random() * 10);
-		var line = english[random][0];
-		jumble(line);
-	} else if (lang === "hindi") {
-		document.getElementById("display").innerHTML = "<b>Form a sentence(Declarative or Interrogative or any other type) from the given words</b>" + "<br>" + "<i>(select the buttons in proper order)</i>";
-		var random = Math.floor(Math.random() * 7);
-		var line = hindi[random][0];
-		 jumble(line);
+		select_sentence(lang);
 	} else {
 		alert("Select language");
+		return false;
 	}
+}
+function select_sentence(lang){
+		document.getElementById("icons").innerHTML="";
+		if (lang === "english") {
+		random = Math.floor(Math.random() * 10);
+		var eng = english[random][0];
+		jumble(eng);
+		} else if (lang === "hindi") {
+		random = Math.floor(Math.random() *7);
+		var hin =  hindi[random][0];
+		jumble(hin);
+		}	
+}
 function jumble(line) {
-	var text = line.split(" "), length = text.length , temp , i , index = length - 1;
+	var text = line.toLowerCase().split(" "), length = text.length , temp , i , index = length - 1;
 	do {
 		i = Math.floor(Math.random() * length);
 		temp = text[i];
@@ -136,12 +148,47 @@ function jumble(line) {
 		text[index] = temp;
 		index--;
 	} while (index !== 0);
-	for (var j = 0; j < length; j++) {
-   		var button = document.createElement('Button');
-		button.id = 'words';
-		button.innerHTML="words";
-		document.body.appendChild(button);
+	for(var j = 0; j < text.length ; j++){
+		var button = document.createElement("Button");
+		button.setAttribute("id", j.toString());
+		button.setAttribute("class", "words");
+		button.setAttribute("value", text[j]);
 		button.innerHTML = text[j];
+		document.getElementById("icons").append(button);
 	}
 }
+function display2(id){
+	if(id === "icons"){
+		return;
+	}	
+		document.getElementById("display2").innerHTML = "<b>Formed Sentence </b>"+"<i>(after selecting words):</i>";
+}
+function press(id){
+	if(id === "icons"){
+		return;
+	}
+	if (count === 0) {
+		document.getElementById("formed").innerHTML = String(document.getElementById(id).value);
+		document.getElementById("reform_button").style.display = "initial";
+	} else {
+		document.getElementById("formed").innerHTML = String(document.getElementById("formed").innerHTML) + " " + String(document.getElementById(id).value);
+	}
+	formed_sentence = document.getElementById("formed").innerHTML;
+	document.getElementById(id).style.display = "none";
+	count += 1;
+	if (count == length) {
+		document.getElementById("check").style.display = "initial";
+	}
+}
+function display(style) {
+	document.getElementById("display").style.display = style;
+	document.getElementById("icons").style.display = style;
+	document.getElementById("display2").style.display = style;
+	document.getElementById("formed").style.display = style;
+	document.getElementById("reform_button").style.display = style;
+	document.getElementById("check").style.display = style;
+	document.getElementById("correct").style.display = style;
+	document.getElementById("right").style.display = style;
+	document.getElementById("wrong").style.display = style;
+	document.getElementById("actual_sentence").style.display = style;
 }
