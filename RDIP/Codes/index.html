@@ -3,18 +3,21 @@
 
 <head>
 	<title>Virtual labs</title>
-
-<script src="script.js"></script>
-<link href="style.css" type="text/css" rel="stylesheet">
-<meta charset="UTF-8"> </head>
-
+	<script src="script.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link href="style.css" type="text/css" rel="stylesheet">
+	<meta charset="UTF-8"> </head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <body>
 	<h3>Experiment </h3>
 	<br>
 	<br>
 	<br>
 	<div class="experiment division" align="center">
-		<select id="dropdown"  onchange="select()">
+		<select id="dropdown" onchange="select()">
 			<option value="default">---Select Language---</option>
 			<option value="english">English</option>
 			<option value="hindi">Hindi</option>
@@ -24,19 +27,20 @@
 		<br>
 		<br>
 		<br>
-	<p id="display"></p>
-	<br>
-	<br>
-	<br>
-	<p id="icons" onclick="press(event.target.id);display2(event.target.id)"></p>
+		<p id="display"></p>
 		<br>
-		<p id="display2"></p>
-		<b><p id="formed"></p></b>
+		<br>
+		<br>
+		<p id="icons" onclick="press(event.target.id);display2(event.target.id)"></p>
+		<br>
+		<p id="display2"></p> <b><p id="formed"></p></b>
 		<button id="reform_button" style="display:none;" onclick="reform()">Re-form the sentence</button>
 		<br>
 		<br>
 		<br>
-		<button id="check" onclick="check()" style="display:none;">Check the correctness of this sentence</button><br><br>
+		<button id="check" onclick="check()" style="display:none;">Check the correctness of this sentence</button>
+		<br>
+		<br>
 		<p id="right" style="display:none;">Right answer!!!</p>
 		<p id="wrong" style="display:none;">Wrong answer!!!</p>
 		<br>

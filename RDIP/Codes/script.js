@@ -130,7 +130,8 @@ var lang = "";
 var a;
 var n;
 var newline;
-function select(){
+
+function select() {
 	clr();
 	lang = document.getElementById("dropdown").value;
 	if (lang === "english" || lang === "hindi") {
@@ -212,48 +213,46 @@ function reform() {
 	buttons(jumbled_sentence);
 }
 
-function check(){
+function check() {
 	var check = false;
 	document.getElementById("correct").style.display = "initial";
-	if (lang === "english"){
-		for(a in english[random]){
-			if(english[random][a] === formed_sentence){
-				check = true ;
+	if (lang === "english") {
+		for (a in english[random]) {
+			if (english[random][a] === formed_sentence) {
+				check = true;
 				break;
-		     	 }
+			}
 		}
-	}
-	else if(lang === "hindi"){
-		for(a in hindi[random]){
-		       	if(hindi[random][a] === formed_sentence){
+	} else if (lang === "hindi") {
+		for (a in hindi[random]) {
+			if (hindi[random][a] === formed_sentence) {
 				check = true;
 				break;
 			}
 		}
 	}
-	if(check === true){
+	if (check === true) {
 		document.getElementById("right").style.display = "initial";
-	}
-	else{
+	} else {
 		document.getElementById("wrong").style.display = "initial";
 	}
 }
-function correct(){
+
+function correct() {
 	document.getElementById("actual_sentence").style.display = "initial";
-	var correct =  document.getElementById("correct").innerHTML; 
-	if(correct === "Get Correct Sentence"|| correct=== "Get Answers"){
+	var correct = document.getElementById("correct").innerHTML;
+	if (correct === "Get Correct Sentence" || correct === "Get Answers") {
 		document.getElementById("correct").innerHTML = "Hide the correct Sentence";
-		if(lang === "english"){
-			for(a in english[random]){
+		if (lang === "english") {
+			for (a in english[random]) {
 				n = document.createTextNode(english[random][a]);
 				document.getElementById("actual_sentence").appendChild(n);
 				newline = document.createElement("br");
 				document.getElementById("actual_sentence").appendChild(newline);
 			}
 			return;
-		}
-		else {
-			for(a in hindi[random]){
+		} else {
+			for (a in hindi[random]) {
 				n = document.createTextNode(hindi[random][a]);
 				document.getElementById("actual_sentence").appendChild(n);
 				newline = document.createElement("br");
@@ -261,12 +260,12 @@ function correct(){
 			}
 			return;
 		}
-	}
-	else{
+	} else {
 		document.getElementById("correct").innerHTML = "Get Answers";
 		document.getElementById("actual_sentence").innerHTML = "";
 	}
 }
+
 function display(style) {
 	document.getElementById("display").style.display = style;
 	document.getElementById("icons").style.display = style;

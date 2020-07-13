@@ -1,28 +1,40 @@
-b{
-color: #0000cc;
-font-family: sans-serif;
+b {
+	color: #0000cc;
+	font-family: sans-serif;
 }
-i{
-color: #1a1aff;
-font-family: sans-serif;
+
+i {
+	color: #1a1aff;
+	font-family: sans-serif;
 }
-.words{
-margin-right: 25px;
-padding: 5px;
-text-align: center;
-position: relative;
+
+.words {
+	margin-right: 25px;
+	padding: 5px;
+	text-align: center;
+	position: relative;
+	font-size: 15px;
 }
-#formed{
-font-size: 30px;
-color: #404040;
+
+#formed {
+	font-size: 30px;
+	color: #404040;
 }
-#right{
-color: green;
-font-size : 30px;
-font-family: sans-serif;
+
+#right {
+	color: green;
+	font-size: 30px;
+	font-family: sans-serif;
 }
-#wrong{
-color : red;
-font-size : 30px;
-font-family: sans-serif;
+
+#wrong {
+	color: red;
+	font-size: 30px;
+	font-family: sans-serif;
+}
+button{
+cursor: pointer;
+border-radius : 4px;
+border : 1px solid black;
+color : black;
 }
