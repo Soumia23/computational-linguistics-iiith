@@ -127,7 +127,10 @@ var length = 0;
 var text = "";
 var jumbled_sentence = "";
 var lang = "";
-function select() {
+var a;
+var n;
+var newline;
+function select(){
 	clr();
 	lang = document.getElementById("dropdown").value;
 	if (lang === "english" || lang === "hindi") {
@@ -233,6 +236,35 @@ function check(){
 	else{
 		document.getElementById("wrong").style.display = "initial";
 		document.getElementById("correct").style.display = "initial";
+	}
+}
+function correct(){
+	document.getElementById("actual_sentence").style.display = "initial";
+	var correct =  document.getElementById("correct").innerHTML; 
+	if(correct === "Get Correct Sentence"|| correct=== "Get Answers"){
+		document.getElementById("correct").innerHTML = "Hide the correct sentence";
+		if(lang === "english"){
+			for(a in english[random]){
+				n = document.createTextNode(english[random][a]);
+				document.getElementById("actual_sentence").appendChild(n);
+				newline = document.createElement("br");
+				document.getElementById("actual_sentence").appendChild(newline);
+			}
+			return;
+		}
+		else {
+			for(a in hindi[random]){
+				n = document.createTextNode(hindi[random][a]);
+				document.getElementById("actual_sentence").appendChild(n);
+				newline = document.createElement("br");
+				document.getElementById("actual_sentence").appendChild(newline);
+			}
+			return;
+		}
+	}
+	else{
+		document.getElementById("correct").innerHTML = "Get Answers";
+		document.getElementById("actual_sentence").innerHTML = "";
 	}
 }
 function display(style) {
