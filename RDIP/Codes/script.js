@@ -214,6 +214,7 @@ function reform() {
 
 function check(){
 	var check = false;
+	document.getElementById("correct").style.display = "initial";
 	if (lang === "english"){
 		for(a in english[random]){
 			if(english[random][a] === formed_sentence){
@@ -235,14 +236,13 @@ function check(){
 	}
 	else{
 		document.getElementById("wrong").style.display = "initial";
-		document.getElementById("correct").style.display = "initial";
 	}
 }
 function correct(){
 	document.getElementById("actual_sentence").style.display = "initial";
 	var correct =  document.getElementById("correct").innerHTML; 
 	if(correct === "Get Correct Sentence"|| correct=== "Get Answers"){
-		document.getElementById("correct").innerHTML = "Hide the correct sentence";
+		document.getElementById("correct").innerHTML = "Hide the correct Sentence";
 		if(lang === "english"){
 			for(a in english[random]){
 				n = document.createTextNode(english[random][a]);
