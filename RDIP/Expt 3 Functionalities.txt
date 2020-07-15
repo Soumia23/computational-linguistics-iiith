@@ -1,0 +1,9 @@
+Tokens and Types : 
+Dropdown list : 
+	- 3 corupus drops down
+On selection of a corpus, respective corpus displays.
+And "Enter the number of tokens and types for the above corpus : " is displayed with 2 text inputs for tokens and types and a submit button respectively.
+After the values are entered and submitted, if wrong text inputs turns red.
+And if the entered values are correct, text inputs turns green and "Right Answer " is displayed with a continue button.
+Onclick of continue button, submit button vanishes and "Now, consider all the tokens with the same 'root' word to be of the same type. Recalculate the number of types." and an input for "#new types" is displayed along with a submit button.
+To verify this new types, snowball stemmer is used.
