@@ -1,4 +1,27 @@
-div{
+#heading{
+font-size: 40px;
+}
+#dropdown{
+font-family: sans-serif;
+color: #404040;
 align: center;
 text-align: center;
+margin-top: 50px;
+}
+table,td{
+border: 1px solid #bfbfbf;
+border-collapse: collapse;
+padding: 8px;
+}
+#table1{
+width: 10%;
+position: relative;
+left: 45%;
+}
+#msg{
+display: none;
+}
+input[type=text]{
+width: 50px;
+heigth: 50px;
 }
