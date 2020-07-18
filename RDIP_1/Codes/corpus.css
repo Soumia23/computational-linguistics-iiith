@@ -1,0 +1,56 @@
+#heading{
+font-size: 40px;
+}
+select{
+height: 30px;
+width: 150px;
+text-align: center;
+}
+#dropdown{
+font-family: sans-serif;
+color: #404040;
+align: center;
+text-align: center;
+margin-top: 50px;
+}
+table,td{
+border: 1px solid #bfbfbf;
+border-collapse: collapse;
+padding: 10px;
+}
+#table1{
+width: 10%;
+position: relative;
+left: 45%;
+}
+#msg{
+display: none;
+}
+#submit{
+width: 70px;
+height: 30px;
+text-align: center;
+font-size: 15px;
+padding: 2px;
+}
+#continue{
+text-align: center;
+padding: 3px; 
+}
+input[type=text]{
+width: 60px;
+heigth: 60px;
+cursor: pointer;
+background-color = "#ffffff";
+}
+#right{
+color: green;
+font-size: 25px;
+}
+#wrong{
+color: red;
+font-size: 25px;
+}
+p{
+margin:50px;
+}
