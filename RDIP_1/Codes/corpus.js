@@ -34,6 +34,7 @@ function select() {
 function displaymsg() {
 	document.getElementById("msgdisplay").innerHTML = "Enter the number of tokens and types for the above corpus:";
 	document.getElementById("msg").style.display = "initial";
+	document.getElementById("submit").style.display = "initial";
 }
 
 function tokens_check() {
@@ -49,6 +50,8 @@ function tokens_check() {
 	document.getElementById("types").style.color = "black";
 	let submitted_tokens = document.getElementById("tokens").value;
 	let submitted_types = document.getElementById("types").value;
+	document.getElementById("right").style.display = "none";
+	document.getElementById("wrong").style.display = "none";
 	if (submitted_tokens == tokens && submitted_types == types) {
 		document.getElementById("tokens").style.backgroundColor = "green";
 		document.getElementById("tokens").value = submitted_tokens;
@@ -65,6 +68,13 @@ function tokens_check() {
 	}
 }
 
+function nextstep(){
+	document.getElementById("tokens_display").innerHTML="";
+	document.getElementById("newmsg").style.display = "initial";
+	document.getElementById("table2").style.display = "initial";
+	document.getElementById("submit2").style.display = "initial";
+	
+}
 function clr(){
 	document.getElementById("right").style.display = "none";
 	document.getElementById("wrong").style.display = "none";
@@ -74,4 +84,7 @@ function clr(){
 	document.getElementById("types").value = "";
 	document.getElementById("msg").style.display = "none";
 	document.getElementById("continue").style.display = "none";
+	document.getElementById("newmsg").style.display = "none";
+	document.getElementById("table2").style.display = "none";
+	document.getElementById("submit2").style.display = "none";
 }
