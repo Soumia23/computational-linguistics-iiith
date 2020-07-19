@@ -14,7 +14,7 @@ var types = 0;
 var newtypes = 0;
 var set;
 var words;
-
+var newset;
 
 function select() {
 	clr();
@@ -81,6 +81,18 @@ function nextstep(){
 	document.getElementById("submit2").style.display = "initial";
 	
 }
+
+function submit2(){
+	newset = new Set();
+	for(i=0; i<words.length; i++){
+		stemmer.setCurrent(words[i]);
+		stemmer.stem();
+		newset.add(stemmer.getCurrent());
+	}
+	newtypes = newset.size;
+	console.log(newset);
+}
+
 function clr(){
 	document.getElementById("right").style.display = "none";
 	document.getElementById("wrong").style.display = "none";
