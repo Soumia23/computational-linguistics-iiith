@@ -17,6 +17,7 @@
 <option value="corpus2">Corpus 2</option>
 <option value="corpus3">Corpus 3</option>
 </select>
+<br><br>
 <div id="msg" style="display:none;">
 <p id="corpusdisplay"></p>
 <p id="msgdisplay"></p>
@@ -26,26 +27,18 @@
 </table>
 <br><br>
 </div>
-<div id="tokens_display">
-<button id="submit" onclick="tokens_check()" style="display:none;">Submit</button>
-<br>
-<br>
-<br>
-<p id="right" style="display:none;">Right Answer</p>
-<p id="wrong" style="display:none;">Wrong Answer</p>
-<br><br><br>
+<button id="submit" style="display:none;" onclick="tokens_check()" >Submit</button>
+<p id="right"></p>
 <button id="continue" style="display:none;" onclick="nextstep()">Continue</button>
-</div>
-<div id="newtypes_display" >
-<p id="newmsg" style="display:none;">Now, consider all the tokens with the same 'root' word to be of the same type. Recalculate the number of types.</p>
-<br><br><br>
-<p id="table2" style="display:none;"><label>#new types:</label><br>
+<div id="newtypes_display" style="display:none;">
+<p id="newmsg" >Now, consider all the tokens with the same 'root' word to be of the same type. Recalculate the number of types.</p>
+
+<p id="table2" ><label>#new types:</label><br>
 <input type="text" id="newtypes">
 </p>
-<br><br>
-<button id="submit2" onclick="submit2()" style="display:none;">Submit</button>
-</div>
-	
+<button id="submit2" onclick="submit2()" >Submit</button>
+<p id="result"></p>
+</div>	
 </body>
 
 </html>

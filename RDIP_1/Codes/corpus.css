@@ -47,12 +47,18 @@ cursor: auto;
 background-color = "#ffffff";
 }
 #right{
-color: green;
 font-size: 25px;
-padding: 50px;
+padding: 20px;
 }
-#wrong{
-color: red;
+#result{
 font-size: 25px;
-padding: 50px;
+padding: 20px;
+}
+#submit2{
+width: 70px;
+height: 30px;
+text-align: center;
+font-size: 15px;
+padding: 2px; 
+cursor: pointer;
 }
