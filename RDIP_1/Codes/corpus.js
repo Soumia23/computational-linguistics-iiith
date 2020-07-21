@@ -59,12 +59,11 @@ function tokens_check() {
 	let submitted_types = document.getElementById("types").value;
 	//console.log(words);
 	//console.log(set);
-	if( submitted_tokens == tokens ){
+	if (submitted_tokens == tokens) {
 		document.getElementById("tokens").style.backgroundColor = "green";
- 		document.getElementById("tokens").value = submitted_tokens;
-		
-	}
-	else{
+		document.getElementById("tokens").value = submitted_tokens;
+
+	} else {
 		document.getElementById("tokens").style.backgroundColor = "red";
 		document.getElementById("tokens").value = submitted_tokens;
 	}
@@ -72,7 +71,7 @@ function tokens_check() {
 		document.getElementById("types").style.backgroundColor = "green";
 		document.getElementById("types").value = submitted_types;
 	} else {
-		
+
 		document.getElementById("types").style.backgroundColor = "red";
 		document.getElementById("types").value = submitted_types;
 	}
@@ -86,67 +85,66 @@ function tokens_check() {
 	}
 }
 
-function nextstep(){
+function nextstep() {
 	document.getElementById("right").innerHTML = "";
 	document.getElementById("continue").style.display = "none";
 	document.getElementById("newtypes_display").style.display = "initial";
 	document.getElementById("submit").style.display = "none";
 }
 
-function submit2(){
+function submit2() {
 	var submitted_newtypes = document.getElementById("newtypes").value;
-	var heard = /heard/g, 
-	his = / him | himself | he /g,
-	_do = / done | does | did /g,
-	have = / had | has /g, 
-	find = /found/g, 
-	grow = /grown|grew/g, 
-	eat = / ate /g,
-	are = / were | was | are /g,
-	no = / not /g,
-	run = / ran /g,
-	i = / me /g,
-	_this = /that/g,
-	s = / s /g;
-	str = str.replace(heard,"hear");
-	str = str.replace(his," his ");
-	str = str.replace(_do," do ");
-	str = str.replace(have," have ");
-	str = str.replace(find,"find");
-	str = str.replace(grow,"grow");
-	str = str.replace(eat," eat ");
-	str = str.replace(are," is ")
+	var heard = /heard/g,
+		his = / him | himself | he /g,
+		_do = / done | does | did /g,
+		have = / had | has | have /g,
+		find = /found/g,
+		grow = /grown|grew/g,
+		eat = / ate /g,
+		are = / were | was | are /g,
+		no = / not /g,
+		run = / ran /g,
+		i = / me /g,
+		_this = /that/g,
+		s = / s /g;
+	str = str.replace(heard, "hear");
+	str = str.replace(his, " his ");
+	str = str.replace(_do, " do ");
+	str = str.replace(have, " have ");
+	str = str.replace(find, "find");
+	str = str.replace(grow, "grow");
+	str = str.replace(eat, " eat ");
+	str = str.replace(are, " is ");
 	str = str.replace(no, " no ");
-	str = str.replace(run," run ");
-	str = str.replace(i ," i ");
-	str = str.replace(_this,"this");
-	str = str.replace(s," ");
-	str = str.replace("into","in to");
+	str = str.replace(run, " run ");
+	str = str.replace(i, " i ");
+	str = str.replace(_this, "this");
+	str = str.replace(s, " ");
+	str = str.replace("into", "in to");
 	words = str.toLowerCase().split(" ");
 	//console.log(words);
 	newset = new Set();
-	for(i=0; i<words.length; i++){
+	for (i = 0; i < words.length; i++) {
 		stemmer.setCurrent(words[i]);
 		stemmer.stem();
 		newset.add(stemmer.getCurrent());
-		
 	}
 	newtypes = newset.size;
-	//console.log(newset);
-	if(newtypes == submitted_newtypes){
+	console.log(newset);	
+	if (submitted_newtypes == newtypes) {
 		document.getElementById("newtypes").style.backgroundColor = "green";
 		document.getElementById("newtypes").value = submitted_newtypes;
 		document.getElementById("result").innerHTML = "Right Answer";
 		document.getElementById("result").style.color = "green";
-	} else {		
+	} else if(submitted_newtypes != newtypes) {
 		document.getElementById("newtypes").style.backgroundColor = "red";
-		document.getElementById("newtypes").value = submitted_newtypes;	
+		document.getElementById("newtypes").value = submitted_newtypes;
 		document.getElementById("result").innerHTML = "Wrong Answer";
 		document.getElementById("result").style.color = "red";
 	}
 }
 
-function clr(){
+function clr() {
 	document.getElementById("tokens").style.backgroundColor = "white";
 	document.getElementById("types").style.backgroundColor = "white";
 	document.getElementById("newtypes").style.backgroundColor = "white";
@@ -157,4 +155,5 @@ function clr(){
 	document.getElementById("right").innerHTML = "";
 	document.getElementById("continue").style.display = "none";
 	document.getElementById("newtypes_display").style.display = "none";
+	document.getElementById("result").innerHTML = "";
 }
