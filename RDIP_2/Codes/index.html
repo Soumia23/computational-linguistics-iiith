@@ -1,4 +1,37 @@
-<DOCHTML!>
+<!DOCTYPE html>
 <html>
-	<head>
+<head>
+	<script src="script.js" type="text/javascript"></script>
+	<link href="style.css" type="text/css" rel="stylesheet">
+	<link rel="shortcut icon" href="../../src/themes/maroon-grid/images/logo.jpg">
+	<meta http-equiv="content-type" content="text/html; charset="UTF-8"> </head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"></head>
+<body>
+<p id="heading">Experiment</p>
+<div id="choose">
+<select id="select_lang" onchange= "select_lang()">
+<option value="default">---Select Language---</option>
+<option value="english">English</option>
+<option value="hindi">Hindi</option>
+</select>
+<br><br>
+<select id="eng" onchange="select_sent" style="display:none;">
+<option id="default">---Select a sentence---</option>
+<option id="eng1">The child liked the chocolate.</option>
+<option id="eng2">She was stopped by the bravest knight.</option>
+<option id="eng3">Mary baked a cake for his birthday.</option>
+<option id="eng4">She decorated the cake carefully.</option>
+<option id="eng5">Mary wore a dress with polka dots.</option>
+</select>
+<select id="hin" onchange="select_sent" style="display:none;">
+<option id="default">---Select a sentence---</option>
+<option id="hin1">राम ने सीता के लिए फल तोड़ा।</option>
+<option id="hin2">छोटे बच्चे पाठशाला जल्दी आयेंगे।</option>
+<option id="hin3">मेहनत का फल मीठा होता है।</option>
+<option id="hin4">वाह! वह खूबसूरत है।</option>
+<option id="hin5">पेड़ से पत्ते गिर गए।</option>
+</select>
 
+</div>
+</body>
+</html>
