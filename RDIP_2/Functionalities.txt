@@ -1,0 +1,6 @@
+Functonalities :
+-Dropdown list for languages.  
+-Dropdown list for selecting sentence of respective language.
+-Displaying a message  “Select the POS tag for corresponding words” along with a table being created having four columns and a submit button.
+-Selecting respective POS in the POS column against LEXICON.
+-After pressing submit button, either a tick or cross image is display against respective LEXICON and get answers button is display below submit button.
